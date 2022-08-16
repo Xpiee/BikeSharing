@@ -35,7 +35,8 @@ Since, we have good idea of the dataset attributes and its independent and depen
 
 ## Exploratory Data Analysis and Feature Engineering
 Now, I would try to identify important patterns and would try to extract insights from the dataset so that we can better understand the role and significance of each attribute and its effect on the dependent variables. Before starting the data analysis, lets have a quick look at how our dataset is arranged. For convenience, I have merged the training and test datasets so that each transformation on every attribute is applied to training and test datasets equivalently.
-Extracting Important Information from ‘Datetime’ Column
+
+### Extracting Important Information from ‘Datetime’ Column
 
 As we can observe from the first 5 rows of our dataset that the ‘datetime’ column has a lot of information that we could exploit. So, as a first step, we would split the ‘datetime’ and extract information like date, hour, month, and weekday (name of the day of a week e.g., Saturday).
 
@@ -44,9 +45,12 @@ By splitting the ‘datetime’ column we could extract the following new column
 1. Hour: This column represents the hours on a particular date. The value of this variable varies from 0 – 23. Based on its nature, we can say that this variable is categorical and cyclic in nature since, ‘0’ and ‘23’ are closely related i.e., 12:00am and 11:00pm. So, we would either consider it as a categorical feature or will apply ‘sine’ and ‘cosine’ transformations such that our machine learning algorithm takes this attribute as a cyclic attribute.
 2. Month: This column contains the name of the month on which the entry was registered e.g., 1: January, 2: February, etc. This is also a categorical variable.
 3. Weekday: This column contains the name of day e.g., Saturday, Sunday, etc. This is a categorical variable.
-4. Year: This column contains the year in which the entry was registered. Summary of Columns and Checking for Missing and Null Values in the dataset
+4. Year: This column contains the year in which the entry was registered. 
+ 
+### Summary of Columns and Checking for Missing and Null Values in the dataset
 
 Now that we have split the ‘datetime’ columns, we will have to check if there are any missing or null values in the dataset. Along with it, we can also, quickly analyze first, last, maximum, and minimum values of each column and their entropy.
+
 Based on the table below, we can observe that there are no missing values in this dataset. However, there are couple of more interesting insights that we can extract from this. These points are mentioned below:
 
 1. There are no missing values in this dataset. However, column ‘windspeed’ as a lot of values as ‘0’. This is unusual since, it is very rare when we have zero windspeed.
