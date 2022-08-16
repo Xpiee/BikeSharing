@@ -103,4 +103,3 @@ Distribution of Bike rentals on Days of Week
 
 
 Based on our hypothesis that the weather conditions like temperature, humidity, and windspeed would greatly impact the number of bike rentals on that day. Hence, we tried to visualize the distribution of bike rental count with respect to the windspeeds. We observed that, fig. 6, the count of bike rentals decreases significantly if the windspeeds are higher than 30-35. Hence, we created a new feature ‘best condition’ that has value ‘1’ for each entry that has temperature less that 27 and windspeed less than of equal to 30. Also, for a working day, ‘not favorable’ when humidity is more than 60.
-Fig.
