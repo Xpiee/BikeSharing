@@ -92,10 +92,15 @@ Line plot showing User Counts by hour of a Day across Seasons
 
 Also, as mentioned earlier (and confirming our hypothesis about spring season), it can be seen from the fig. 3 the count is low for season 1 i.e., spring season. Hence, the weather, especially, the temperature and humidity would play an important role in predicting the number of rental bikes since, people would prefer to rent a bike when the weather and temperature is warm or favorable.
 
-![Showing the distribution of counts with working day (and non-working day) during a day](images/day.png)
+![Showing the distribution of counts with working day (and non-working day) during a day](images/workingnon.png)
 Showing the distribution of counts with working day (and non-working day) during a day
 
 Based on the fig. 4, we can say that there is peak in bike rentals at 7-8am and 5-7pm on a working day as well as there is a peak between 10am-3pm on non-working days. This is a very important pattern and we can extract this feature into a different column that would have value ‘1’ during peak timings i.e., during 7-8am and 5-7pm on a working day and during 10am-3pm on non-working day. Same insight can be drawn from fig. 5, which shows that the peak timings on weekends and weekdays.
 
 
+![Distribution of Bike rentals on Days of Week](images/days.png)
+Distribution of Bike rentals on Days of Week
 
+
+Based on our hypothesis that the weather conditions like temperature, humidity, and windspeed would greatly impact the number of bike rentals on that day. Hence, we tried to visualize the distribution of bike rental count with respect to the windspeeds. We observed that, fig. 6, the count of bike rentals decreases significantly if the windspeeds are higher than 30-35. Hence, we created a new feature ‘best condition’ that has value ‘1’ for each entry that has temperature less that 27 and windspeed less than of equal to 30. Also, for a working day, ‘not favorable’ when humidity is more than 60.
+Fig.
