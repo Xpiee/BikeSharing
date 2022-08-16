@@ -56,3 +56,13 @@ Based on the table below, we can observe that there are no missing values in thi
 1. There are no missing values in this dataset. However, column ‘windspeed’ as a lot of values as ‘0’. This is unusual since, it is very rare when we have zero windspeed.
 2. The following variables has a limited ‘unique values’ and hence they should be considered as categorical: season, holiday, workingday, weather, hour, month, weekday, day, year.
 3. There are no negative values in the dataset i.e., there are no false entries in the dataset.
+
+### Predicting Zero Values of ‘windspeed’
+As we know that there are zero values in windspeed, we can use Random Forest Regressor with default values to predict these zero values and then replace zero values with them. To predict the values, we would use the attribute that can directly affect the values of windspeed. Hence, we would use the following attributes: "season", "holiday", "workingday", "weather", "weekday", "month", "year", "hour".
+We would use the following hyperparameters for our random forest regressors: n_estimators=1200, max_depth=180, max_features='auto'.
+
+
+### Analysis of Outliers and Skewness in the column ‘count’
+After predicting the values in windspeed, we should now check if there are any outliers in the ‘count’ dependent variable. Also, we would check the distribution of the ‘count’ variable.
+
+![Distribution][images/bikedist.png]
