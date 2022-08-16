@@ -66,3 +66,17 @@ We would use the following hyperparameters for our random forest regressors: n_e
 After predicting the values in windspeed, we should now check if there are any outliers in the ‘count’ dependent variable. Also, we would check the distribution of the ‘count’ variable.
 
 ![Distribution](images/bikedist.png)
+Figure a. Distribution of Count variable, b. Distribution of Log transformed Count variable, c. Distribution of Cube root transformed Count variable
+
+The above fig. 1 (a) shows that the dependent variable ‘count’ is highly right skewed i.e., there are a lot of values on the right side of the curve making a tail on the right side. Skewness is an important issue that we need to address as this can make our algorithm make wrong predictions. To deal with the right skewed data we can apply the following transformations:
+1. Log Transformation
+2. Cube Root Transformation
+
+As we can see, in the fig. 1 (a) and (b), that taking a log transformation improves the distribution of variable, but there is still skewness in the data, meanwhile, the cube root transformation greatly reduce the skewness in the data. However, during modelling, we got better results with log transformation of ‘count’ rather than cube root transformation of ‘count’. Hence, we dropped the cube root transformation root.
+
+Now, we would analyze the outliers in the dependent variable ‘count’. To do that, we would plot the boxplots of count vs different independent variables. As we can see in the plots below that there are outliers in the ‘count’ variable. Also, we can observe following points from the plots below:
+1. There are outliers in the variable ‘count’. However, the effect of outliers is greatly reduced when we apply log transformation on ‘count’.
+2. The season ‘Spring’ has a smaller number of counts since there is a significant dip in the median. So, we can make a hypothesis that ‘temperature’ would play an important role in forecasting ‘count’ since, in spring outside temperature would not be favorable for bike renting and riders would prefer other modes of transport.
+3. There are more outliers on a working day. From this we can conclude that these outliers are due to high demand of bikes on a working day and are not entered in the data erroneously. Hence, we would not remove these outliers as removing them will lead to more information loss. We would use log transformation to reduce the effect of these outliers.
+
+![Boxplot of ‘count’ and ‘log of count’ with ‘season’ and ‘working day’](images/boxplot.png)
