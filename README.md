@@ -65,4 +65,4 @@ We would use the following hyperparameters for our random forest regressors: n_e
 ### Analysis of Outliers and Skewness in the column ‘count’
 After predicting the values in windspeed, we should now check if there are any outliers in the ‘count’ dependent variable. Also, we would check the distribution of the ‘count’ variable.
 
-![Distribution][images/bikedist.png]
+![Distribution](images/bikedist.png)
