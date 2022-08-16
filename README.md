@@ -80,3 +80,22 @@ Now, we would analyze the outliers in the dependent variable ‘count’. To do 
 3. There are more outliers on a working day. From this we can conclude that these outliers are due to high demand of bikes on a working day and are not entered in the data erroneously. Hence, we would not remove these outliers as removing them will lead to more information loss. We would use log transformation to reduce the effect of these outliers.
 
 ![Boxplot of ‘count’ and ‘log of count’ with ‘season’ and ‘working day’](images/boxplot.png)
+
+
+## Visualization of Count During a Day with respect to Independent Variables
+
+Now, we would try to visualize that how does the count changes during a day with respect to different independent variables like season, day of a week, holiday, working day. Also, we would try to extract essential patterns and trends from this analysis and engineer new features based on those patterns. These engineered features would be very useful while training our algorithm and would help our algorithm to model these patterns to predict count vales more accurately.
+Firstly, we would check how does the ‘season’ affects the count of bike rentals during a day. Note: Complete code of EDA and Feature Engineering can be found in the attached Html file named “Bike Data 4 EDA and Feature Engineering”. Based on the fig. 3, we can say that there is an increase in values of bike rentals during 7-8am and 5-7pm. This could mean that there is an increase in bike rentals during office/school timings. We can further investigate this hypothesis by studying the count with respect to ‘casual’ and ‘registered’ users as well as analyzing the count on weekdays and weekends. Based on our hypothesis, the count should go down on weekends during office/school timings.
+
+![Line plot showing User Counts by hour of a Day across Seasons](images/dayseason.png)
+Line plot showing User Counts by hour of a Day across Seasons
+
+Also, as mentioned earlier (and confirming our hypothesis about spring season), it can be seen from the fig. 3 the count is low for season 1 i.e., spring season. Hence, the weather, especially, the temperature and humidity would play an important role in predicting the number of rental bikes since, people would prefer to rent a bike when the weather and temperature is warm or favorable.
+
+![Showing the distribution of counts with working day (and non-working day) during a day](images/day.png)
+Showing the distribution of counts with working day (and non-working day) during a day
+
+Based on the fig. 4, we can say that there is peak in bike rentals at 7-8am and 5-7pm on a working day as well as there is a peak between 10am-3pm on non-working days. This is a very important pattern and we can extract this feature into a different column that would have value ‘1’ during peak timings i.e., during 7-8am and 5-7pm on a working day and during 10am-3pm on non-working day. Same insight can be drawn from fig. 5, which shows that the peak timings on weekends and weekdays.
+
+
+
